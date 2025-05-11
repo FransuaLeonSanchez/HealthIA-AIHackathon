@@ -1,111 +1,111 @@
 # 🤖 HealthIA
 
-> Your intelligent personal assistant for a healthier life — powered by Azure, OpenAI, Python, and LangGraph.
+> Tu asistente personal inteligente para una vida más saludable — impulsado por Azure, OpenAI, Python y LangGraph.
 
 <img src="https://github.com/user-attachments/assets/6a6dfcd8-726a-41e1-bc6d-92ec5ad27f16" alt="HealthIA Demo"/>
 
 <p align="center">
-  <b>Personalized nutrition, workouts, and health guidance — developed with Python, Azure, OpenAI, and LangGraph for the Microsoft Hackathon.</b>
+  <b>Nutrición personalizada, entrenamientos y orientación de salud — desarrollado con Python, Azure, OpenAI y LangGraph para la Hackathon de Microsoft.</b>
 </p>
 
 <p align="center">
   <a href="https://sergioyupanqui.com" target="_blank">
-    <img src="https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge" alt="Live Demo"/>
+    <img src="https://img.shields.io/badge/Demo%20En%20Vivo-Azul-blue?style=for-the-badge" alt="Demo En Vivo"/>
   </a>
 </p>
 
-<p align="center"><strong>👉 To try it now, visit <a href="https://sergioyupanqui.com" target="_blank">www.sergioyupanqui.com</a> from your PC or mobile and analyze your own plate instantly!</strong></p>
+<p align="center"><strong>👉 ¡Para probarlo ahora, visita <a href="https://sergioyupanqui.com" target="_blank">www.sergioyupanqui.com</a> desde tu PC o móvil y analiza tu propio plato al instante!</strong></p>
 
 ---
 
-## 🌟 Overview
+## 🌟 Resumen General
 
-**HealthIA** is a multi-agent wellness assistant that combines generative AI with real-time IoT data — such as smartwatches, bands, and biometric sensors — to generate personalized health interventions. It supports both **Spanish** and **English**, adapting to each user's lifestyle, preferences, and cultural habits.
+**HealthIA** es un asistente de bienestar multiagente que combina IA generativa con datos de IoT en tiempo real — como relojes inteligentes, pulseras y sensores biométricos — para generar intervenciones de salud personalizadas. Soporta tanto **español** como **inglés**, adaptándose al estilo de vida, preferencias y hábitos culturales de cada usuario.
 
-Developed with **Python**, **LangGraph**, and **Azure Cloud**, HealthIA leverages modular AI agents to deliver contextualized advice, using natural language, computer vision, and retrieval-augmented generation (RAG).
-
----
-
-## ❓ The Problem
-
-- **🩺 Chronic disease epidemic** — Obesity, diabetes, and hypertension driven by poor daily routines.
-- **🚪 Low engagement with health apps** — Most users quit within 30 days due to lack of relevance and feedback.
-- **📊 Fragmented health data** — Wearables and food logs are siloed and rarely used for real-time personalized feedback.
+Desarrollado con **Python**, **LangGraph** y **Azure Cloud**, HealthIA utiliza agentes de IA modulares para ofrecer consejos contextualizados, usando lenguaje natural, visión por computadora y generación aumentada por recuperación (RAG).
 
 ---
 
-## 💡 The Solution
+## ❓ El Problema
 
-HealthIA's architecture orchestrates AI-powered modules via **LangGraph** and a **Python backend** (using FastAPI), enabling:
-
-- Smart conversational coaching with **OpenAI (GPT-4o)**
-- Real-time food recognition using **OpenAI**
-- Custom workout and meal plans via context-aware agents
-- Medical constraints (e.g., allergies, conditions) that dynamically restrict or enhance suggestions
-
-All user data, health metrics, and context are stored in **Azure Cosmos DB** with vectorization for advanced similarity search.
+- **🩺 Epidemia de enfermedades crónicas** — Obesidad, diabetes e hipertensión impulsadas por malas rutinas diarias.
+- **🚪 Baja interacción con aplicaciones de salud** — La mayoría de los usuarios abandonan en 30 días debido a la falta de relevancia y retroalimentación.
+- **📊 Datos de salud fragmentados** — Los wearables y los registros de alimentos están aislados y rara vez se utilizan para retroalimentación personalizada en tiempo real.
 
 ---
 
-## ⚙️ Technical Architecture
+## 💡 La Solución
 
-- **🤖 LangGraph-based multi-agent flow** — A central `SupervisorAgent` routes user requests to the correct worker (MealAgent, MedicalAgent, PlannerAgent, etc.)
-- **☁ Azure + OpenAI** — Secure, scalable cloud architecture powered by GPT-4o and Azure services
-- **⌚ IoT Integration** — Real-time sync with wearable data for adaptive suggestions
-- **🏅 Gamification engine** — Encourages consistent engagement via rewards and nudges
-- **📡 REST API with Python FastAPI** — Endpoints like `/api/v1/chatbot` and `/api/v1/meal` offer clear modular access
+La arquitectura de HealthIA orquesta módulos impulsados por IA a través de **LangGraph** y un **backend de Python** (usando FastAPI), permitiendo:
 
----
+- Coaching conversacional inteligente con **OpenAI (GPT-4o)**
+- Reconocimiento de alimentos en tiempo real usando **OpenAI**
+- Planes de entrenamiento y comidas personalizados mediante agentes conscientes del contexto
+- Restricciones médicas (por ejemplo, alergias, condiciones) que restringen o mejoran dinámicamente las sugerencias
 
-## 💻 Why Python?
-
-- **⚡ FastAPI productivity** — Rapid API development thanks to its modern design, automatic data validation, serialization, and interactive API documentation (Swagger UI / ReDoc).
-- **🧠 Supervisor-Agent orchestration** — LangGraph patterns allow modular request classification and delegation, fitting well with Python's flexibility.
-- **🔗 Rich AI/ML Ecosystem & Integrations** — Python is the de-facto language for AI/ML, offering extensive libraries and seamless connections to OpenAI, Azure Vision, and storage services.
-- **✅ Asynchronous Capabilities & Type Hinting** — FastAPI is built on Starlette and Pydantic, enabling high-performance asynchronous code and robust data validation through Python type hints for better code quality.
+Todos los datos del usuario, métricas de salud y contexto se almacenan en **Azure Cosmos DB** con vectorización para búsqueda avanzada por similitud.
 
 ---
 
-## 🔍 Core Features
+## ⚙️ Arquitectura Técnica
 
-### 1. 🧠 Health Chatbot
-Ask questions like:
-> "I work remotely and feel back pain."
+- **🤖 Flujo multiagente basado en LangGraph** — Un `SupervisorAgent` central enruta las solicitudes del usuario al trabajador correcto (MealAgent, MedicalAgent, PlannerAgent, etc.)
+- **☁ Azure + OpenAI** — Arquitectura en la nube segura y escalable impulsada por GPT-4o y servicios de Azure
+- **⌚ Integración IoT** — Sincronización en tiempo real con datos de wearables para sugerencias adaptativas
+- **🏅 Motor de gamificación** — Fomenta la participación constante mediante recompensas y estímulos
+- **📡 API REST con Python FastAPI** — Endpoints como `/api/v1/chatbot` y `/api/v1/meal` ofrecen acceso modular claro
 
-You'll receive:
-- Personalized suggestions
-- Activity-based reminders
-- Stretching or hydration plans
+---
 
-### 2. 📸 Meal Scanner with Open AI
-- Snap a photo of your plate
-- Vision API analyzes nutritional balance vs Harvard Plate
-- Get custom feedback: "Add more greens" or "Reduce carbs"
+## 💻 ¿Por qué Python?
+
+- **⚡ Productividad con FastAPI** — Rápido desarrollo de API gracias a su diseño moderno, validación automática de datos, serialización y documentación interactiva de API (Swagger UI / ReDoc).
+- **🧠 Orquestación Supervisor-Agent** — Los patrones de LangGraph permiten la clasificación modular de solicitudes y la delegación, encajando bien con la flexibilidad de Python.
+- **🔗 Rico Ecosistema AI/ML e Integraciones** — Python es el lenguaje de facto para IA/ML, ofreciendo extensas bibliotecas y conexiones fluidas a OpenAI, Azure Vision y servicios de almacenamiento.
+- **✅ Capacidades Asíncronas y Tipado Estático (Type Hinting)** — FastAPI está construido sobre Starlette y Pydantic, permitiendo código asíncrono de alto rendimiento y validación de datos robusta a través de las sugerencias de tipo de Python para una mejor calidad de código.
+
+---
+
+## 🔍 Características Principales
+
+### 1. 🧠 Chatbot de Salud
+Haz preguntas como:
+> “Trabajo de forma remota y siento dolor de espalda.”
+
+Recibirás:
+- Sugerencias personalizadas
+- Recordatorios basados en actividad
+- Planes de estiramiento o hidratación
+
+### 2. 📸 Escáner de Comidas con Open AI
+- Toma una foto de tu plato
+- La API de Visión analiza el balance nutricional comparado con el Plato de Harvard
+- Obtén retroalimentación personalizada: “Añade más vegetales” o “Reduce los carbohidratos”
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8493337e-9a81-43b8-ac3d-600db5138898" alt="HealthIA Demo"/>
 </p>
 
-### 3. 🥗 Diet Generator
-- Context-aware recipes with macros
-- Video tutorials and shareable meal plans
-- Dynamically adapts to medical conditions and goals
+### 3. 🥗 Generador de Dietas
+- Recetas conscientes del contexto con macros
+- Video tutoriales y planes de comidas compartibles
+- Se adapta dinámicamente a condiciones médicas y objetivos
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/94fe574f-51e9-4ef6-b57b-98f08a751b96" alt="HealthIA Demo"/>
 </p>
 
-### 4. 🏋️ Workout Planner
-- Weekly routines personalized to your metrics
-- Adjusted using sleep, steps, heart rate
-- Animated tutorials and motivational alerts
+### 4. 🏋️ Planificador de Entrenamientos
+- Rutinas semanales personalizadas según tus métricas
+- Ajustadas usando datos de sueño, pasos y ritmo cardíaco
+- Tutoriales animados y alertas motivacionales
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/712efe78-cff1-40c6-aa16-f526736e4739" alt="HealthIA Demo"/>
 </p>
 
-### 5. 🩺 Medical Personalization
-- Tailor plans by inputting allergies, chronic illnesses
-- Ensures safe, effective recommendations
+### 5. 🩺 Personalización Médica
+- Adapta los planes ingresando alergias, enfermedades crónicas
+- Asegura recomendaciones seguras y efectivas
   
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a759a9d0-d627-4262-a1e7-2e68e98e117f" alt="HealthIA Demo"/>
@@ -113,11 +113,11 @@ You'll receive:
 
 ---
 
-## 📊 System Architecture
+## 📊 Arquitectura del Sistema
 
 <img src="https://github.com/user-attachments/assets/8378437f-831f-47f9-82fd-a9bb34a6db81" alt="Azure Architecture" />
 
-Built fully on **Azure Cloud**, it includes:
+Construido completamente en **Azure Cloud**, incluye:
 - Azure API Management
 - Azure Functions
 - Azure Blob Storage
@@ -130,26 +130,26 @@ Built fully on **Azure Cloud**, it includes:
 
 ---
 
-## 🤖 Agentic Framework
+## 🤖 Framework Agéntico
 
 <img src="https://github.com/user-attachments/assets/44950f32-f0da-4096-abc9-980f42d74857" alt="Azure MultiAgent" />
 
 ---
 
-# 📈 Sequence Diagrams – HealthIA
+# 📈 Diagramas de Secuencia – HealthIA
 
-## 1️⃣ Meal Scanner + AI Feedback
+## 1️⃣ Escáner de Comidas + Retroalimentación IA
 <img src="https://github.com/user-attachments/assets/bbb6732a-99c7-4301-a17d-fa31efb634f7" alt="HealthIA 1"/>
 
-## 2️⃣ Health Chatbot Interaction
+## 2️⃣ Interacción del Chatbot de Salud
 <img src="https://github.com/user-attachments/assets/5de7974e-f949-4f0b-982c-3affa87efb0c" alt="HealthIA 2"/>
 
-## 3️⃣ Workout Routine Generator
+## 3️⃣ Generador de Rutinas de Entrenamiento
 <img src="https://github.com/user-attachments/assets/d42d17c3-b126-4b8d-a72f-0a5659cfb5c5" alt="HealthIA 3"/>
 
 ---
 
-## 👥 Meet the Team
+## 👥 Conoce al Equipo
 
 <p align="center">
   <a href="https://www.linkedin.com/in/fransua-leon/" target="_blank">

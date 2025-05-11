@@ -1,0 +1,74 @@
+.meal-plan-card {
+  background-color: #f9f9f9; /* Fondo ligeramente gris */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 95%;
+  box-sizing: border-box;
+}
+
+.meal-plan-day {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333; /* Color de texto oscuro */
+  font-weight: bold;
+}
+
+.meal-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Grid responsivo */
+  gap: 15px; /* Espacio entre elementos */
+}
+
+.meal-plan-item {
+  background-color: #fff; /* Fondo blanco para cada item */
+  border-radius: 10px;
+  overflow: hidden; /* Para que la imagen no se salga */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.meal-plan-item:hover {
+  transform: translateY(-5px); /* Efecto hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.meal-plan-image {
+  width: 100%;
+  height: 100px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+}
+
+.meal-plan-info {
+  padding: 10px;
+  flex-grow: 1; /* Para que ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meal-plan-type {
+  font-size: 0.8em;
+  color: #666; /* Color gris para el tipo de comida */
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.meal-plan-name {
+  font-size: 0.9em;
+  color: #333;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 350px) {
+  .meal-plan-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+  }
+} 

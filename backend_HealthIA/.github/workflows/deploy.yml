@@ -1,0 +1,26 @@
+name: Deploy Backend HealthIA to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add EC2 instance to known hosts
+      run: ssh-keyscan -H 3.89.242.141 >> ~/.ssh/known_hosts
+
+    - name: Run update and deploy script on EC2
+      run: |
+        ssh ec2-user@3.89.242.141 "bash /home/ec2-user/backend_HealthIA/auto_update_backend.sh"

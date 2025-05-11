@@ -1,0 +1,14 @@
+{
+  "usuario_id": "user001",
+  "nombre": "Juan Pérez",
+  "edad": 32,
+  "peso": 75,
+  "altura": 178,
+  "genero": "masculino",
+  "condiciones_medicas": ["dolor de espalda ocasional"],
+  "alergias": [],
+  "restricciones_alimentarias": [],
+  "objetivos": ["ganancia muscular", "mejorar postura", "aumentar energía"],
+  "nivel_actividad": "intermedio",
+  "preferencias_alimentarias": []
+}

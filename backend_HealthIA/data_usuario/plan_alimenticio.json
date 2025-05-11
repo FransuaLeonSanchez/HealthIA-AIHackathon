@@ -1,0 +1,298 @@
+{
+  "usuario": {
+    "nombre": "Fransua León",
+    "datos_calculados": {
+      "calorias_diarias_recomendadas": 2000,
+      "proteinas_gramos_diarios": 100,
+      "carbohidratos_gramos_diarios": 250,
+      "grasas_gramos_diarios": 50
+    }
+  },
+  "justificacion_general": "El plan se adapta a las necesidades de Fransua, quien tiene un peso saludable y un nivel de actividad moderado. Se ha considerado su hipertensión arterial al seleccionar comidas con bajo contenido de sodio y se han evitado alimentos que pudieran desencadenar migrañas. Las comidas elegidas son variadas y equilibradas en macronutrientes.",
+  "plan_semanal": {
+    "Lunes": {
+      "desayuno": {
+        "nombre": "Oatmeal with Quinoa and Banana",
+        "energia_kcal": 300,
+        "proteinas_g": 10,
+        "carbohidratos_g": 50,
+        "grasas_g": 5,
+        "imagen_url": "https://fodmap-publicsite-us-east-2.s3.amazonaws.com/production/media/images/Quinoa_Porridge_with_Banana_Yoghur.2e16d0ba.fill-720x400.png"
+      },
+      "almuerzo": {
+        "nombre": "Quinoa Salad with Chicken",
+        "energia_kcal": 400,
+        "proteinas_g": 30,
+        "carbohidratos_g": 50,
+        "grasas_g": 14,
+        "imagen_url": "https://sunkissedkitchen.com/wp-content/uploads/2017/11/moroccan-chicken-quinoa-salad-feature.jpg"
+      },
+      "merienda": {
+        "nombre": "Plantain Chips with Guacamole",
+        "energia_kcal": 220,
+        "proteinas_g": 4,
+        "carbohidratos_g": 30,
+        "grasas_g": 10,
+        "imagen_url": "https://siriuslyhungry.com/wp-content/uploads/2021/07/guac-and-plantain-chips-4-720x405.jpg"
+      },
+      "cena": {
+        "nombre": "Grilled Trout with Herbs",
+        "energia_kcal": 420,
+        "proteinas_g": 35,
+        "carbohidratos_g": 25,
+        "grasas_g": 15,
+        "imagen_url": "https://i.ytimg.com/vi/KK9PabT4jGw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAB3QWjvBYyPvauByubcdmB-EekgA"
+      },
+      "totales_dia": {
+        "energia_kcal": 1340,
+        "proteinas_g": 79,
+        "carbohidratos_g": 155,
+        "grasas_g": 44
+      }
+    },
+    "Martes": {
+      "desayuno": {
+        "nombre": "Avocado Toast with Poached Egg",
+        "energia_kcal": 350,
+        "proteinas_g": 15,
+        "carbohidratos_g": 30,
+        "grasas_g": 18,
+        "imagen_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn7d-BBT7XiRDdAEamksYWQKxfzPKrrvCjOQ&s"
+      },
+      "almuerzo": {
+        "nombre": "Lomo Saltado",
+        "energia_kcal": 170,
+        "proteinas_g": 20,
+        "carbohidratos_g": 25,
+        "grasas_g": 8,
+        "imagen_url": "https://i.ytimg.com/vi/sWXRJbGi6yQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAmzgGJ6J0eLasWLgYE-TcZgyiSJQ"
+      },
+      "merienda": {
+        "nombre": "Tostones with Lime",
+        "energia_kcal": 200,
+        "proteinas_g": 3,
+        "carbohidratos_g": 28,
+        "grasas_g": 8,
+        "imagen_url": "https://goodiegodmother.com/wp-content/uploads/2021/06/horizonal-image-cuban-fried-plantains-scaled.jpg"
+      },
+      "cena": {
+        "nombre": "Chicken Escabeche",
+        "energia_kcal": 400,
+        "proteinas_g": 32,
+        "carbohidratos_g": 30,
+        "grasas_g": 12,
+        "imagen_url": "https://www.allrecipes.com/thmb/CYH6Xm_lYpXaMsemp56Zr2KUK5k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/274330_Chicken-Escabech_Buckwheat-Queen_6754461_original-2x1-1-97265d0402704a05bd63da17fc2ca698.jpg"
+      },
+      "totales_dia": {
+        "energia_kcal": 1120,
+        "proteinas_g": 70,
+        "carbohidratos_g": 113,
+        "grasas_g": 46
+      }
+    },
+    "Miércoles": {
+      "desayuno": {
+        "nombre": "Fruit Salad with Yogurt and Granola",
+        "energia_kcal": 250,
+        "proteinas_g": 8,
+        "carbohidratos_g": 40,
+        "grasas_g": 7,
+        "imagen_url": "https://realfood.tesco.com/media/images/MothersGranolaLGH-e914ddf2-750c-458b-ba8b-6695bb46a96d-0-1400x919.jpg"
+      },
+      "almuerzo": {
+        "nombre": "Rice And Chicken",
+        "energia_kcal": 320,
+        "proteinas_g": 25,
+        "carbohidratos_g": 50,
+        "grasas_g": 10,
+        "imagen_url": "https://www.simplyrecipes.com/thmb/KU-Q1xCeSjcMHLfGVvYUiQoBknA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2014__06__Chicken-Rice-Casserole-LEAD-2-01230ff397ac4b35958e8ffe9857fca6.jpg"
+      },
+      "merienda": {
+        "nombre": "Quinoa & Corn Salad",
+        "energia_kcal": 180,
+        "proteinas_g": 5,
+        "carbohidratos_g": 25,
+        "grasas_g": 6,
+        "imagen_url": "https://www.grocery.coop/sites/default/files/wp-content/uploads/2012/03/Quinoa_Kale_Salad_with_Corn1_0.jpg"
+      },
+      "cena": {
+        "nombre": "Quinoa Soup with Vegetables",
+        "energia_kcal": 380,
+        "proteinas_g": 15,
+        "carbohidratos_g": 50,
+        "grasas_g": 8,
+        "imagen_url": "https://assets.wholefoodsmarket.com/recipes/4004/2048/1536/4004-5.jpg"
+      },
+      "totales_dia": {
+        "energia_kcal": 1130,
+        "proteinas_g": 53,
+        "carbohidratos_g": 165,
+        "grasas_g": 31
+      }
+    },
+    "Jueves": {
+      "desayuno": {
+        "nombre": "Amaranth Porridge",
+        "energia_kcal": 280,
+        "proteinas_g": 9,
+        "carbohidratos_g": 45,
+        "grasas_g": 6,
+        "imagen_url": "https://eating-made-easy.com/wp-content/uploads/2014/06/15.jpg"
+      },
+      "almuerzo": {
+        "nombre": "Aji de Gallina",
+        "energia_kcal": 350,
+        "proteinas_g": 28,
+        "carbohidratos_g": 40,
+        "grasas_g": 15,
+        "imagen_url": "https://recetas.comohacer.cl/wp-content/uploads/2023/03/aji-de-gallina-con-arroz.jpg"
+      },
+      "merienda": {
+        "nombre": "Mixed Nuts & Dried Fruits",
+        "energia_kcal": 250,
+        "proteinas_g": 6,
+        "carbohidratos_g": 20,
+        "grasas_g": 15,
+        "imagen_url": "https://www.nuttydelights.ie/pub/media/mageplaza/blog/post/u/n/untitled_design.jpg"
+      },
+      "cena": {
+        "nombre": "Steamed Fish with Ginger",
+        "energia_kcal": 360,
+        "proteinas_g": 30,
+        "carbohidratos_g": 20,
+        "grasas_g": 10,
+        "imagen_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_38/1777805/ginger-scallion-fish-main-jc-210921.jpg"
+      },
+      "totales_dia": {
+        "energia_kcal": 1240,
+        "proteinas_g": 73,
+        "carbohidratos_g": 125,
+        "grasas_g": 46
+      }
+    },
+    "Viernes": {
+      "desayuno": {
+        "nombre": "Chia Pudding with Mango",
+        "energia_kcal": 300,
+        "proteinas_g": 8,
+        "carbohidratos_g": 40,
+        "grasas_g": 10,
+        "imagen_url": "https://c.ndtvimg.com/2020-06/a0ct6hi_pudding_625x300_26_June_20.jpg"
+      },
+      "almuerzo": {
+        "nombre": "Ceviche",
+        "energia_kcal": 140,
+        "proteinas_g": 22,
+        "carbohidratos_g": 14,
+        "grasas_g": 3,
+        "imagen_url": "https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_orig.jpg"
+      },
+      "merienda": {
+        "nombre": "Mini Ceviche Cups",
+        "energia_kcal": 210,
+        "proteinas_g": 12,
+        "carbohidratos_g": 10,
+        "grasas_g": 8,
+        "imagen_url": "https://www.pamperedchef.ca/iceberg/com/recipe/936267-lg.jpg"
+      },
+      "cena": {
+        "nombre": "Vegetable Causa",
+        "energia_kcal": 340,
+        "proteinas_g": 10,
+        "carbohidratos_g": 55,
+        "grasas_g": 12,
+        "imagen_url": "https://mojo.generalmills.com/api/public/content/gAjkbxNXv0e5knTWfopHPg_gmi_hi_res_jpeg.jpeg?v=58e15536&t=16e3ce250f244648bef28c5949fb99ff"
+      },
+      "totales_dia": {
+        "energia_kcal": 990,
+        "proteinas_g": 52,
+        "carbohidratos_g": 119,
+        "grasas_g": 33
+      }
+    },
+    "Sábado": {
+      "desayuno": {
+        "nombre": "Cornmeal Pancakes with Honey",
+        "energia_kcal": 350,
+        "proteinas_g": 10,
+        "carbohidratos_g": 55,
+        "grasas_g": 8,
+        "imagen_url": "https://dinnerthendessert.com/wp-content/uploads/2015/05/Honey-Cornmeal-Pancakes.jpg"
+      },
+      "almuerzo": {
+        "nombre": "Fish Cracklings (Baked)",
+        "energia_kcal": 400,
+        "proteinas_g": 25,
+        "carbohidratos_g": 30,
+        "grasas_g": 20,
+        "imagen_url": "https://cocina-casera.com/en/wp-content/uploads/2023/05/fish-cracklings.jpg"
+      },
+      "merienda": {
+        "nombre": "Peruvian Granola Bars",
+        "energia_kcal": 230,
+        "proteinas_g": 7,
+        "carbohidratos_g": 30,
+        "grasas_g": 9,
+        "imagen_url": "https://m.media-amazon.com/images/I/91Tbf+EPRNS._SL1500_.jpg"
+      },
+      "cena": {
+        "nombre": "Shrimp Stir-fry with Quinoa",
+        "energia_kcal": 450,
+        "proteinas_g": 35,
+        "carbohidratos_g": 40,
+        "grasas_g": 15,
+        "imagen_url": "https://uk.lkk.com/images/recipes/main/recipe-quinoa-stir-fry-with-shrimp-and-vegetables-with-oyster-sauce.jpg"
+      },
+      "totales_dia": {
+        "energia_kcal": 1430,
+        "proteinas_g": 77,
+        "carbohidratos_g": 155,
+        "grasas_g": 52
+      }
+    },
+    "Domingo": {
+      "desayuno": {
+        "nombre": "Papaya Smoothie Bowl",
+        "energia_kcal": 320,
+        "proteinas_g": 9,
+        "carbohidratos_g": 50,
+        "grasas_g": 7,
+        "imagen_url": "https://cdn.foodaciously.com/static/recipes/dada739f-363c-4f0b-8b93-6f87a65648b6/papaya-smoothie-bowl-ca17acf95da46587c08daefeb2a740fe-2560.jpg"
+      },
+      "almuerzo": {
+        "nombre": "Shrimp Chowder",
+        "energia_kcal": 500,
+        "proteinas_g": 35,
+        "carbohidratos_g": 35,
+        "grasas_g": 25,
+        "imagen_url": "https://assets.wholefoodsmarket.com/recipes/4004/2048/1536/4004-5.jpg"
+      },
+      "merienda": {
+        "nombre": "Fresh Fruit Smoothie",
+        "energia_kcal": 180,
+        "proteinas_g": 4,
+        "carbohidratos_g": 35,
+        "grasas_g": 4,
+        "imagen_url": "https://lilluna.com/wp-content/uploads/2022/10/fruit-smoothie-resize-14.jpg"
+      },
+      "cena": {
+        "nombre": "Light Vegetable Soup",
+        "energia_kcal": 300,
+        "proteinas_g": 8,
+        "carbohidratos_g": 40,
+        "grasas_g": 7,
+        "imagen_url": "https://www.inspiredtaste.net/wp-content/uploads/2018/10/Homemade-Vegetable-Soup-Recipe-2-1200.jpg"
+      },
+      "totales_dia": {
+        "energia_kcal": 1300,
+        "proteinas_g": 56,
+        "carbohidratos_g": 160,
+        "grasas_g": 43
+      }
+    }
+  },
+  "advertencias": [
+    "Se ha priorizado la selección de comidas con bajo contenido de sodio debido a la hipertensión arterial.",
+    "Algunas comidas pueden ser repetitivas debido a la limitación de opciones en la lista proporcionada."
+  ]
+}

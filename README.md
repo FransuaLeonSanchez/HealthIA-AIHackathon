@@ -1,11 +1,11 @@
 # 🤖 HealthIA
 
-> Your intelligent personal assistant for a healthier life — powered by Azure, OpenAI, Java, and LangGraph.
+> Your intelligent personal assistant for a healthier life — powered by Azure, OpenAI, Python, and LangGraph.
 
 <img src="https://github.com/user-attachments/assets/6a6dfcd8-726a-41e1-bc6d-92ec5ad27f16" alt="HealthIA Demo"/>
 
 <p align="center">
-  <b>Personalized nutrition, workouts, and health guidance — developed with Java, Azure, OpenAI, and LangGraph for the Microsoft Hackathon.</b>
+  <b>Personalized nutrition, workouts, and health guidance — developed with Python, Azure, OpenAI, and LangGraph for the Microsoft Hackathon.</b>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 
 **HealthIA** is a multi-agent wellness assistant that combines generative AI with real-time IoT data — such as smartwatches, bands, and biometric sensors — to generate personalized health interventions. It supports both **Spanish** and **English**, adapting to each user's lifestyle, preferences, and cultural habits.
 
-Developed with **Java**, **LangGraph**, and **Azure Cloud**, HealthIA leverages modular AI agents to deliver contextualized advice, using natural language, computer vision, and retrieval-augmented generation (RAG).
+Developed with **Python**, **LangGraph**, and **Azure Cloud**, HealthIA leverages modular AI agents to deliver contextualized advice, using natural language, computer vision, and retrieval-augmented generation (RAG).
 
 ---
 
@@ -36,7 +36,7 @@ Developed with **Java**, **LangGraph**, and **Azure Cloud**, HealthIA leverages 
 
 ## 💡 The Solution
 
-HealthIA’s architecture orchestrates AI-powered modules via **LangGraph** and a **Java backend**, enabling:
+HealthIA's architecture orchestrates AI-powered modules via **LangGraph** and a **Python backend** (using FastAPI), enabling:
 
 - Smart conversational coaching with **OpenAI (GPT-4o)**
 - Real-time food recognition using **OpenAI**
@@ -53,16 +53,16 @@ All user data, health metrics, and context are stored in **Azure Cosmos DB** wit
 - **☁ Azure + OpenAI** — Secure, scalable cloud architecture powered by GPT-4o and Azure services
 - **⌚ IoT Integration** — Real-time sync with wearable data for adaptive suggestions
 - **🏅 Gamification engine** — Encourages consistent engagement via rewards and nudges
-- **📡 REST API with Java Spring Boot** — Endpoints like `/api/v1/chatbot` and `/api/v1/meal` offer clear modular access
+- **📡 REST API with Python FastAPI** — Endpoints like `/api/v1/chatbot` and `/api/v1/meal` offer clear modular access
 
 ---
 
-## 💻 Why Java?
+## 💻 Why Python?
 
-- **⚡ Spring Boot productivity** — Rapid API development, scheduling, and microservice capabilities
-- **🧠 Supervisor-Agent orchestration** — Pattern allows modular request classification and delegation
-- **🔗 Native cloud + AI integrations** — Easily connects to OpenAI, Azure Vision, and storage services
-- **✅ Strongly-typed ecosystem** — Static typing ensures better code quality and debugging
+- **⚡ FastAPI productivity** — Rapid API development thanks to its modern design, automatic data validation, serialization, and interactive API documentation (Swagger UI / ReDoc).
+- **🧠 Supervisor-Agent orchestration** — LangGraph patterns allow modular request classification and delegation, fitting well with Python's flexibility.
+- **🔗 Rich AI/ML Ecosystem & Integrations** — Python is the de-facto language for AI/ML, offering extensive libraries and seamless connections to OpenAI, Azure Vision, and storage services.
+- **✅ Asynchronous Capabilities & Type Hinting** — FastAPI is built on Starlette and Pydantic, enabling high-performance asynchronous code and robust data validation through Python type hints for better code quality.
 
 ---
 
@@ -70,9 +70,9 @@ All user data, health metrics, and context are stored in **Azure Cosmos DB** wit
 
 ### 1. 🧠 Health Chatbot
 Ask questions like:
-> “I work remotely and feel back pain.”
+> "I work remotely and feel back pain."
 
-You’ll receive:
+You'll receive:
 - Personalized suggestions
 - Activity-based reminders
 - Stretching or hydration plans
@@ -80,7 +80,7 @@ You’ll receive:
 ### 2. 📸 Meal Scanner with Open AI
 - Snap a photo of your plate
 - Vision API analyzes nutritional balance vs Harvard Plate
-- Get custom feedback: “Add more greens” or “Reduce carbs”
+- Get custom feedback: "Add more greens" or "Reduce carbs"
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8493337e-9a81-43b8-ac3d-600db5138898" alt="HealthIA Demo"/>
 </p>

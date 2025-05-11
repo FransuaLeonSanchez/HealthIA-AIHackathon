@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://sergioyupanqui.com" target="_blank">
-    <img src="https://img.shields.io/badge/Demo%20En%20Vivo-Azul-blue?style=for-the-badge" alt="Demo En Vivo"/>
+  <a href="https://www.sergioyupanqui.com" target="_blank">
+    <img src="https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge" alt="Demo En Vivo"/>
   </a>
 </p>
 

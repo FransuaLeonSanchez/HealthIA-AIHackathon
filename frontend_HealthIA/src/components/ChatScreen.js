@@ -155,7 +155,7 @@ const ChatScreen = ({ onBack }) => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, chatId]);
+  }, [messages]);
 
   // Ajustar el espacio en el área de mensajes cuando la previsualización está activa
   useEffect(() => {
@@ -822,7 +822,7 @@ const ChatScreen = ({ onBack }) => {
       chatId: chatId,
       timestamp: new Date().toISOString()
     });
-  }, [messages]);
+  }, [messages, chatId]);
 
   const handleSelectChat = async (chatId) => {
     try {

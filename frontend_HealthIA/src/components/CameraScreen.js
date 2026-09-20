@@ -271,4 +271,4 @@ const CameraScreen = ({ onBack, onPhotoTaken }) => {
     );
 };
 
-export default CameraScreen; 
+export default CameraScreen;

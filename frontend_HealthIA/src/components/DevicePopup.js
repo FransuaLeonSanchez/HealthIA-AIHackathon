@@ -10,7 +10,6 @@ const DevicePopup = ({ isOpen, onClose }) => {
     const [showSuccess, setShowSuccess] = useState(false);
     const [deviceName, setDeviceName] = useState('');
     const [error, setError] = useState('');
-    const [suggestions, setSuggestions] = useState([]);
     const [showSuggestion, setShowSuggestion] = useState(false);
     const suggestionName = "Fransua's Smartwatch";
 
@@ -240,4 +239,4 @@ const DevicePopup = ({ isOpen, onClose }) => {
     );
 };
 
-export default DevicePopup; 
+export default DevicePopup;

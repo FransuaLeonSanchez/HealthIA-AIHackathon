@@ -1,5 +1,5 @@
 // src/components/ExercisesChart.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import '../styles/ExerciseScreen.css'; // Ajusta según tu estructura de estilos
 import '../styles/ExercisesCharts.css';
 
@@ -12,19 +12,19 @@ const ExercisesChart = () => {
     setShowNumber(true);
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = useCallback(() => {
     if (showNumber) {
       setShowNumber(false);
       setCurrentSteps(null);
     }
-  };
+  }, [showNumber]);
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [showNumber]);
+  }, [handleClickOutside]);
 
   console.log("Componente ExercisesChart renderizado");
 

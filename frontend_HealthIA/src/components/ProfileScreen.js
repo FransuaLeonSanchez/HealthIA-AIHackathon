@@ -199,7 +199,7 @@ const ProfileScreen = ({ onNavigate, previousScreen }) => {
             <div className="profile-screen-photo">
               <img src={avatarFransua} alt="Profile" />
               <button className="profile-screen-camera-button">
-                <img src={cameraIcon} alt="Change profile photo" />
+                <img src={cameraIcon} alt="" aria-hidden="true" />
               </button>
             </div>
             <h2 className="profile-screen-username">{userData.username}</h2>

@@ -692,9 +692,9 @@ const ChatScreen = ({ onBack }) => {
           .map(cell => cell.trim());
         
         htmlTable += '<tr>';
-        cells.forEach(cell => {
+        for (const cell of cells) {
           htmlTable += `<td>${cell}</td>`;
-        });
+        }
         htmlTable += '</tr>';
       }
       

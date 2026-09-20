@@ -84,21 +84,6 @@ const HealthConditionsScreen = ({ onBack }) => {
         autoScan: false
     });
 
-    // Manejadores para condiciones
-    const handleAddCondition = (newCondition) => {
-        setConditions(prev => [...prev, {
-            id: Date.now(),
-            ...newCondition,
-            lastUpdated: new Date().toISOString().split('T')[0]
-        }]);
-    };
-
-    const handleUpdateCondition = (id, updates) => {
-        setConditions(prev => prev.map(condition => 
-            condition.id === id ? { ...condition, ...updates } : condition
-        ));
-    };
-
     const handleDeleteCondition = (id) => {
         setConditions(prev => prev.filter(condition => condition.id !== id));
     };
@@ -110,29 +95,6 @@ const HealthConditionsScreen = ({ onBack }) => {
             setNewNotification('');
             setShowAddNotification(false);
         }
-    };
-
-    // Manejador para documentos
-    const handleAddDocument = () => {
-        const now = new Date();
-        const formattedDate = now.toLocaleString('en-US', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        }).replace(/[/,]/g, ':');
-
-        const newDocument = {
-            id: Date.now(),
-            name: `Scan ${formattedDate}`,
-            date: 'Just now',
-            pages: '1 page'
-        };
-
-        setDocuments(prev => [newDocument, ...prev]); // Agregar al inicio de la lista
     };
 
     // Función para registrar nueva condición

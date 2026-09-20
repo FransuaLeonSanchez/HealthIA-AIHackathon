@@ -3,7 +3,7 @@
 > A bilingual AI wellness companion for nutrition, activity, and everyday health guidance.
 
 <p align="center">
-  <a href="https://healthia.vercel.app"><img src="https://img.shields.io/badge/Live%20preview-Vercel-000000?style=for-the-badge&logo=vercel" alt="Live preview" /></a>
+  <a href="https://healthia-ai.vercel.app"><img src="https://img.shields.io/badge/Live%20preview-Vercel-000000?style=for-the-badge&logo=vercel" alt="Live preview" /></a>
   <a href="./frontend_HealthIA"><img src="https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React frontend" /></a>
   <a href="./backend_HealthIA"><img src="https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI backend" /></a>
 </p>
@@ -20,7 +20,7 @@ HealthIA is a hackathon prototype that combines a React experience with a FastAP
 
 The frontend is deployed on Vercel:
 
-- **[Open HealthIA](https://healthia.vercel.app)**
+- **[Open HealthIA](https://healthia-ai.vercel.app)**
 - The deployed preview is intentionally usable as a UI showcase. Chat and image-analysis actions require a separately hosted backend configured through `REACT_APP_API_URL`.
 
 ## What the prototype demonstrates

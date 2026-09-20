@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000). The default development API
 npm run build
 ```
 
-The project is configured for Vercel as a Create React App. Set the Vercel **Root Directory** to `frontend_HealthIA`. The public UI preview is available at [healthia.vercel.app](https://healthia.vercel.app).
+The project is configured for Vercel as a Create React App. Set the Vercel **Root Directory** to `frontend_HealthIA`. The public UI preview is available at [healthia-ai.vercel.app](https://healthia-ai.vercel.app).
 
 ## Feature areas
 

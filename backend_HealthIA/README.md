@@ -1,6 +1,8 @@
 # HealthIA API
 
-FastAPI service used by the HealthIA frontend for conversational guidance and meal-image analysis.
+FastAPI service used by the [HealthIA frontend](../frontend_HealthIA/README.md) for conversational guidance and meal-image analysis.
+
+This is the prototype API boundary: it is not bundled into the public Vercel UI deployment. Run it locally or deploy it separately behind HTTPS, authentication, and an appropriate data store before connecting it to real users.
 
 ## Run locally
 

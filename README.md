@@ -16,12 +16,17 @@ HealthIA is a hackathon prototype that combines a React experience with a FastAP
 
 > **Prototype notice:** HealthIA is an educational/product prototype, not a medical device or a substitute for professional medical advice. AI output must be reviewed by a qualified professional before any health decision.
 
-## Live preview
+## Project snapshot
 
-The frontend is deployed on Vercel:
+| Surface | Status |
+| --- | --- |
+| **Live UI** | [Open HealthIA](https://healthia-ai.vercel.app) |
+| **Frontend** | React 19 + React Router + Create React App, deployed on Vercel. |
+| **Backend** | FastAPI service intended to run locally or on a separately managed HTTPS host. |
+| **AI boundary** | OpenAI-powered chat and image-analysis paths, configured through environment variables. |
+| **Data boundary** | Local JSON persistence for the prototype; optional S3 media storage. |
 
-- **[Open HealthIA](https://healthia-ai.vercel.app)**
-- The deployed preview is intentionally usable as a UI showcase. Chat and image-analysis actions require a separately hosted backend configured through `REACT_APP_API_URL`.
+The deployed UI is intentionally usable as a showcase. Chat and image-analysis actions require a separately hosted backend configured through `REACT_APP_API_URL`; no public backend is implied by the Vercel preview.
 
 ## What the prototype demonstrates
 
@@ -92,7 +97,7 @@ Interactive API documentation is available at `/docs` when the backend is runnin
 └── frontend_HealthIA/src/   # Screens, components, assets, and styles
 ```
 
-The repository intentionally contains one active Python backend. The former Java implementation, EC2 SSH workflows, sample personal-data files, and standalone experiments were removed from the public surface because they were not part of the current runnable path.
+The repository keeps one active Python backend and one active React frontend so the public surface maps directly to the runnable path.
 
 ## Run locally
 
@@ -154,9 +159,9 @@ RELOAD=True
 
 Never commit `.env` files, API keys, credentials, or uploaded user data.
 
-## Credits
+## Project status
 
-HealthIA was created as a collaborative AI-health hackathon project. The repository preserves the original team attribution and visual direction while making the active frontend/backend path easier to understand and run.
+HealthIA was created as a collaborative AI-health hackathon project. This repository presents the product concept, the active frontend/backend path, and the integration boundaries clearly enough for review or continued development.
 
 ## License
 

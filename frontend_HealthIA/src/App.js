@@ -1,6 +1,6 @@
 // App.js
 import React, { useState, useEffect, Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import FitnessDashboard from './components/FitnessDashboard';
 import ActivitiesScreen from './components/ActivitiesScreen';
@@ -43,9 +43,6 @@ class ErrorBoundary extends Component {
 //    Aquí va la lógica que usa useNavigate y los estados de la app
 //---------------------------------
 const AppContent = () => {
-  // useNavigate se puede usar aquí porque es un descendiente directo de <Router>
-  const navigate = useNavigate();
-
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentScreen, setCurrentScreen] = useState('home');
@@ -84,12 +81,6 @@ const AppContent = () => {
   const handleLoginSuccess = () => {
     console.log('Login successful');
     setIsAuthenticated(true);
-  };
-
-  // Ejemplo de función que navega programáticamente
-  // usando navigate('/') con un 'state'
-  const handleNavigate = (id) => {
-    navigate('/', { state: { id } });
   };
 
   // Si currentScreen es 'device', devolvemos esa pantalla

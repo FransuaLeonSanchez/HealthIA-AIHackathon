@@ -155,7 +155,7 @@ const ChatScreen = ({ onBack }) => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, chatId]);
 
   // Ajustar el espacio en el área de mensajes cuando la previsualización está activa
   useEffect(() => {

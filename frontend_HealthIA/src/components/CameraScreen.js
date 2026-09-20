@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "../styles/CameraScreen.css";
 import "../styles/SharedContainer.css";
-import mascotImage from "../assets/logos/mascot.png";
 import logoDashboard from "../assets/logos/logo.png";
 
 const CameraScreen = ({ onBack, onPhotoTaken }) => {

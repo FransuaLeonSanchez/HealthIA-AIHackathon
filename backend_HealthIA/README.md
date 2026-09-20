@@ -1,206 +1,71 @@
 # HealthIA API
 
-API para el chatbot de HealthIA que permite interactuar con modelos de OpenAI.
+FastAPI service used by the HealthIA frontend for conversational guidance and meal-image analysis.
 
-## Configuración
+## Run locally
 
-1. Instalar dependencias:
 ```bash
+python -m venv .venv
+# macOS/Linux: source .venv/bin/activate
+# Windows PowerShell: .venv\\Scripts\\Activate.ps1
 pip install -r requirements.txt
+copy .env.example .env  # PowerShell; use cp on macOS/Linux
+uvicorn main:app --reload --port 8000
 ```
 
-2. Configurar variables de entorno en un archivo `.env`:
-```
-OPENAI_API_KEY=tu_clave_api_de_openai
+Then open [http://localhost:8000/docs](http://localhost:8000/docs) for the generated OpenAPI documentation.
+
+## Configuration
+
+Required:
+
+```env
+OPENAI_API_KEY=replace-me
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-3. Ejecutar la aplicación:
-```bash
-uvicorn app.main:app --reload
+Optional S3 variables enable remote storage for uploaded media:
+
+```env
+AWS_ACCESS_KEY_ID=replace-me
+AWS_SECRET_ACCESS_KEY=replace-me
+AWS_REGION=us-east-1
+S3_BUCKET=healthia
+S3_FOLDER=chatbot
+S3_PLATES_FOLDER=platos_ia
 ```
+
+Keep all credentials in `.env` or a secret manager. Never commit them or real health records.
 
 ## Endpoints
 
-### Chatbot
+| Method | Route | Description |
+| --- | --- | --- |
+| `GET` | `/` | Service health message. |
+| `PUT` | `/chatbot` | Accepts JSON or multipart text, image, and audio input. |
+| `GET` | `/show-chats` | Lists locally persisted conversations. |
+| `DELETE` | `/delete-chat/{chat_id}` | Deletes one conversation. |
+| `PUT` | `/analyze-image` | Analyzes a meal image using OpenAI vision. |
+| `GET` | `/list-analyses` | Lists persisted image analyses. |
+| `GET` | `/show-analysis/{analysis_id}` | Retrieves one image analysis. |
+| `DELETE` | `/delete-analysis` | Deletes one image analysis. |
 
-**Endpoint:** `PUT /chatbot`
+The prototype stores conversation and analysis history under ignored runtime directories. For production, replace local JSON persistence with an authenticated database and add user-level isolation, retention policies, and audit logging.
 
-Permite enviar mensajes al chatbot y recibir respuestas. Soporta tres tipos de entrada: texto, imagen y audio. Este endpoint acepta tanto solicitudes JSON como formularios multipart.
+## Code map
 
-#### Opción 1: JSON
-
-##### Parámetros:
-
-- `message`: El mensaje del usuario (texto, imagen en base64 o audio en base64)
-- `id`: ID numérico entero de la conversación (obligatorio). Si no existe, se crea una nueva conversación con este ID.
-- `type`: Tipo de entrada (`text`, `image`, `audio`). Por defecto es `text`.
-- `media_content`: Contenido multimedia opcional (URL o identificador)
-
-##### Ejemplos de uso:
-
-###### 1. Mensaje de texto
-
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "¿Cuáles son los síntomas de la diabetes?",
-    "id": 1,
-    "type": "text"
-  }'
+```text
+main.py                 # FastAPI application and CORS setup
+app/models/              # Request and response schemas
+app/routers/             # Chat and image-analysis HTTP routes
+app/services/            # OpenAI, persistence, and optional S3 services
+app/static/              # Assistant system prompt
+herramientas/            # Domain agents used by chatbot orchestration
 ```
 
-###### 2. Imagen (base64)
+## Security notes
 
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "BASE64_DE_LA_IMAGEN",
-    "id": 2,
-    "type": "image"
-  }'
-```
-
-###### 3. Audio (base64)
-
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "BASE64_DEL_AUDIO",
-    "id": 3,
-    "type": "audio"
-  }'
-```
-
-#### Opción 2: Formulario Multipart
-
-##### Parámetros:
-
-- `message`: El mensaje del usuario (texto)
-- `id`: ID numérico entero de la conversación (obligatorio)
-- `type`: Tipo de entrada (`text`, `image`, `audio`). Por defecto es `text`.
-- `media_file`: Archivo multimedia opcional (imagen o audio)
-
-##### Ejemplos de uso:
-
-###### 1. Mensaje de texto
-
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -F "message=¿Cuáles son los síntomas de la diabetes?" \
-  -F "id=1" \
-  -F "type=text"
-```
-
-###### 2. Imagen (archivo)
-
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -F "message=¿Qué puedes ver en esta imagen?" \
-  -F "id=2" \
-  -F "type=image" \
-  -F "media_file=@/ruta/a/la/imagen.jpg"
-```
-
-###### 3. Audio (archivo)
-
-```bash
-curl -X PUT http://3.89.242.141:8000/chatbot \
-  -F "message=Transcribe este audio" \
-  -F "id=3" \
-  -F "type=audio" \
-  -F "media_file=@/ruta/al/audio.mp3"
-```
-
-### Obtener todas las conversaciones
-
-**Endpoint:** `GET /show-chats`
-
-Retorna todas las conversaciones disponibles.
-
-```bash
-curl -X GET http://3.89.242.141:8000/show-chats
-```
-
-### Eliminar una conversación
-
-**Endpoint:** `DELETE /delete-chat/{conversation_id}`
-
-Elimina una conversación específica.
-
-```bash
-curl -X DELETE http://3.89.242.141:8000/delete-chat/1
-```
-
-## Respuesta
-
-La respuesta del chatbot incluye:
-
-```json
-{
-  "respuesta": "Respuesta del asistente",
-  "id": 1,
-  "title": "Título de la conversación",
-  "created_at": "2023-07-15 14:30:45"
-}
-```
-
-En caso de error:
-
-```json
-{
-  "error": "Mensaje de error",
-  "id": 1,
-  "title": "Título de la conversación",
-  "created_at": "2023-07-15 14:30:45"
-}
-```
-
-## Integración con React
-
-Para enviar archivos desde un frontend en React, puedes usar FormData:
-
-```javascript
-// Ejemplo para enviar una imagen
-const handleSubmit = async (message, conversationId, imageFile) => {
-  const formData = new FormData();
-  formData.append('message', message);
-  formData.append('id', conversationId);
-  formData.append('type', 'image');
-  
-  if (imageFile) {
-    formData.append('media_file', imageFile);
-  }
-  
-  try {
-    const response = await fetch('http://3.89.242.141:8000/chatbot', {
-      method: 'PUT',
-      body: formData,
-    });
-    
-    const data = await response.json();
-    // Procesar la respuesta
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
-```
-
-## Notas
-
-- Para las imágenes y audios, puedes enviarlos directamente como archivos usando un formulario multipart o codificarlos en base64 y enviarlos a través de JSON.
-- El título de la conversación se genera automáticamente basado en el primer mensaje.
-- La fecha de creación se guarda en formato "YYYY-MM-DD HH:MM:SS" en la zona horaria de Perú (UTC-5).
-
-## Estructura del proyecto
-
-- `main.py`: Archivo principal de la aplicación
-- `app/`: Directorio principal del código
-  - `routers/`: Contiene los routers de la API
-  - `models/`: Contiene los modelos de datos
-  - `services/`: Contiene los servicios de la aplicación
-  - `data/`: Directorio donde se almacenan las conversaciones 
+- CORS is intentionally permissive for the hackathon prototype; restrict it to known frontend origins before production.
+- Do not expose API keys in the frontend or commit `.env` files.
+- Add authentication and authorization before handling real personal or medical information.
+- Treat all AI output as assistive, non-diagnostic content.

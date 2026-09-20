@@ -43,7 +43,6 @@ const ProfileScreen = ({ onNavigate, previousScreen }) => {
     confirmPassword: ''
   });
   const [showConfirmLogout, setShowConfirmLogout] = useState(false);
-  const [isDashboardVisible, setIsDashboardVisible] = useState(true);
 
   const userStats = [
     { icon: heartbeatIcon, value: "215bpm", label: "Heart rate" },
@@ -90,18 +89,6 @@ const ProfileScreen = ({ onNavigate, previousScreen }) => {
 
   const handleLogout = () => {
     setShowConfirmLogout(true);
-  };
-
-  const confirmLogout = () => {
-    setShowConfirmLogout(false);
-    setActiveModal(null);
-    setTempData({});
-    setPasswordData({
-      currentPassword: '',
-      newPassword: '',
-      confirmPassword: ''
-    });
-    onNavigate('login');
   };
 
   const handlePasswordChange = (field, value) => {
@@ -180,7 +167,7 @@ const ProfileScreen = ({ onNavigate, previousScreen }) => {
 
   // Función para agregar un nuevo contacto vacío en el modal de emergency
   const addNewEmergencyContact = () => {
-    setTempData(prev => [, { name: "", relationship: "", phone: "" }]);
+    setTempData(prev => [...(Array.isArray(prev) ? prev : []), { name: "", relationship: "", phone: "" }]);
   };
 
   if (showPrevious) {
@@ -212,7 +199,7 @@ const ProfileScreen = ({ onNavigate, previousScreen }) => {
             <div className="profile-screen-photo">
               <img src={avatarFransua} alt="Profile" />
               <button className="profile-screen-camera-button">
-                <img src={cameraIcon} alt="Change photo" />
+                <img src={cameraIcon} alt="Change profile photo" />
               </button>
             </div>
             <h2 className="profile-screen-username">{userData.username}</h2>

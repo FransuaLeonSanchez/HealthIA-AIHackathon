@@ -10,7 +10,7 @@ const NutritionChooseScreen = ({ onBack }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [location, setLocation] = useState('Lima, Peru');
   const [customLocation, setCustomLocation] = useState('');
-  const [locationSuggestions, setLocationSuggestions] = useState([]);
+  const [locationSuggestions] = useState([]);
   const [showInput, setShowInput] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
@@ -20,7 +20,6 @@ const NutritionChooseScreen = ({ onBack }) => {
   const [priceMin, setPriceMin] = useState(0);
   const [priceMax, setPriceMax] = useState(100);
   const [selectedCategory, setSelectedCategory] = useState('Lunch');
-  const [showRestaurantModal, setShowRestaurantModal] = useState(false);
   // Estados para filtros adicionales
   const [selectedMeats, setSelectedMeats] = useState([]);
   const [selectedDietary, setSelectedDietary] = useState([]);
@@ -154,16 +153,6 @@ const NutritionChooseScreen = ({ onBack }) => {
     if (recommendedMeal) {
       navigate(`/nutrition/${recommendedMeal.name}`);
     }
-  };
-
-  // Función para limpiar todos los filtros
-  const handleClearFilters = () => {
-    setSelectedMeats([]);
-    setSelectedDietary([]);
-    setNumberOfServings(1);
-    setPriceMin(0);
-    setPriceMax(100);
-    setSearchText('');
   };
 
   return (

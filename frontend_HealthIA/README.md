@@ -1,77 +1,32 @@
-CANSAO
+# HealthIA frontend
 
+React frontend for the HealthIA wellness prototype.
 
+## Quick start
 
-
-# Getting Started with Create React App
-
-test2
-
-## Configuración de Variables de Entorno
-
-Para configurar la aplicación, necesitas crear un archivo `.env` en la raíz del proyecto con las siguientes variables:
-
-```
-REACT_APP_API_URL=https://tu-url-de-ngrok.ngrok-free.app
+```bash
+npm ci
+copy .env.example .env.local  # PowerShell; use cp on macOS/Linux
+npm start
 ```
 
-Puedes copiar el archivo `.env.example` y renombrarlo a `.env`, luego actualiza los valores según tu entorno.
+Open [http://localhost:3000](http://localhost:3000). The default development API URL is `http://localhost:8000`; override it with `REACT_APP_API_URL` when the backend runs elsewhere.
 
-## Available Scripts
+## Production build
 
-In the project directory, you can run:
+```bash
+npm run build
+```
 
-### `npm start`
+The project is configured for Vercel as a Create React App. Set the Vercel **Root Directory** to `frontend_HealthIA`. The public UI preview is available at [healthia.vercel.app](https://healthia.vercel.app).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Feature areas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Login and onboarding flow
+- Nutrition and meal-plan screens
+- Meal image analysis client
+- Conversational assistant client
+- Activity and wearable-device views
+- Health profile and emergency-contact views
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The AI request paths are intentionally configured through `REACT_APP_API_URL`; credentials belong only in the backend environment, never in this frontend bundle.

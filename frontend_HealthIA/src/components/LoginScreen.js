@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/LoginScreen.css";
 import logoSign from "../assets/logos/logo_sign.png";
 import backgroundSign from "../assets/background/background_sign.svg";
-import HomeScreen from "./HomeScreen";
 import emailIcon from "../assets/icons/email.svg";
 // Puedes seguir usando passwordIcon si lo deseas para el label; en este ejemplo se mantiene a la izquierda
 import passwordIcon from "../assets/icons/password.svg";
@@ -10,7 +9,6 @@ import signInArrow from "../assets/icons/sign-in-arrow.svg";
 import instagramIcon from "../assets/icons/instagram.svg";
 import facebookIcon from "../assets/icons/facebook.svg";
 import linkedinIcon from "../assets/icons/linkedin.svg";
-import backArrow from "../assets/icons/back-arrow.svg";
 import { useNavigate } from "react-router-dom";
 
 const LoginScreen = ({ onLoginSuccess, onSignUpClick, onForgotPasswordClick, onBack }) => {

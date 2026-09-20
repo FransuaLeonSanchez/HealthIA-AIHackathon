@@ -1,167 +1,163 @@
-# 🤖 HealthIA
+# HealthIA
 
-> Tu asistente personal inteligente para una vida más saludable — impulsado por Azure, OpenAI, Python y LangGraph.
-
-<img src="https://github.com/user-attachments/assets/6a6dfcd8-726a-41e1-bc6d-92ec5ad27f16" alt="HealthIA Demo"/>
+> A bilingual AI wellness companion for nutrition, activity, and everyday health guidance.
 
 <p align="center">
-  <b>Nutrición personalizada, entrenamientos y orientación de salud — desarrollado con Python, Azure, OpenAI y LangGraph para la Hackathon de Microsoft.</b>
+  <a href="https://healthia.vercel.app"><img src="https://img.shields.io/badge/Live%20preview-Vercel-000000?style=for-the-badge&logo=vercel" alt="Live preview" /></a>
+  <a href="./frontend_HealthIA"><img src="https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React frontend" /></a>
+  <a href="./backend_HealthIA"><img src="https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI backend" /></a>
 </p>
 
 <p align="center">
-  <a href="https://www.sergioyupanqui.com" target="_blank">
-    <img src="https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge" alt="Demo En Vivo"/>
-  </a>
+  <img src="https://github.com/user-attachments/assets/6a6dfcd8-726a-41e1-bc6d-92ec5ad27f16" alt="HealthIA product preview" />
 </p>
 
-<p align="center"><strong>👉 ¡Para probarlo ahora, visita <a href="https://sergioyupanqui.com" target="_blank">www.sergioyupanqui.com</a> desde tu PC o móvil y analiza tu propio plato al instante!</strong></p>
+HealthIA is a hackathon prototype that combines a React experience with a FastAPI service to explore conversational coaching, meal-photo analysis, personalized meal plans, exercise guidance, and health-profile context. The interface supports English and Spanish copy and is designed around a mobile-first wellness journey.
 
----
+> **Prototype notice:** HealthIA is an educational/product prototype, not a medical device or a substitute for professional medical advice. AI output must be reviewed by a qualified professional before any health decision.
 
-## 🌟 Resumen General
+## Live preview
 
-**HealthIA** es un asistente de bienestar multiagente que combina IA generativa con datos de IoT en tiempo real — como relojes inteligentes, pulseras y sensores biométricos — para generar intervenciones de salud personalizadas. Soporta tanto **español** como **inglés**, adaptándose al estilo de vida, preferencias y hábitos culturales de cada usuario.
+The frontend is deployed on Vercel:
 
-Desarrollado con **Python**, **LangGraph** y **Azure Cloud**, HealthIA utiliza agentes de IA modulares para ofrecer consejos contextualizados, usando lenguaje natural, visión por computadora y generación aumentada por recuperación (RAG).
+- **[Open HealthIA](https://healthia.vercel.app)**
+- The deployed preview is intentionally usable as a UI showcase. Chat and image-analysis actions require a separately hosted backend configured through `REACT_APP_API_URL`.
 
----
+## What the prototype demonstrates
 
-## ❓ El Problema
+- 💬 Conversational health guidance with text, image, and audio request paths.
+- 🍽️ Meal-photo analysis with nutritional feedback and meal history.
+- 🥗 Context-aware meal plans and recipe instructions.
+- 🏃 Activity, sleep, heart-rate, and wearable-device screens.
+- 👤 A profile flow for goals, conditions, devices, and emergency contacts.
+- 🧩 A modular API surface that keeps chat and image analysis separate.
 
-- **🩺 Epidemia de enfermedades crónicas** — Obesidad, diabetes e hipertensión impulsadas por malas rutinas diarias.
-- **🚪 Baja interacción con aplicaciones de salud** — La mayoría de los usuarios abandonan en 30 días debido a la falta de relevancia y retroalimentación.
-- **📊 Datos de salud fragmentados** — Los wearables y los registros de alimentos están aislados y rara vez se utilizan para retroalimentación personalizada en tiempo real.
+## Screens and visual references
 
----
-
-## 💡 La Solución
-
-La arquitectura de HealthIA orquesta módulos impulsados por IA a través de **LangGraph** y un **backend de Python** (usando FastAPI), permitiendo:
-
-- Coaching conversacional inteligente con **OpenAI (GPT-4o)**
-- Reconocimiento de alimentos en tiempo real usando **OpenAI**
-- Planes de entrenamiento y comidas personalizados mediante agentes conscientes del contexto
-- Restricciones médicas (por ejemplo, alergias, condiciones) que restringen o mejoran dinámicamente las sugerencias
-
-Todos los datos del usuario, métricas de salud y contexto se almacenan en **Azure Cosmos DB** con vectorización para búsqueda avanzada por similitud.
-
----
-
-## ⚙️ Arquitectura Técnica
-
-- **🤖 Flujo multiagente basado en LangGraph** — Un `SupervisorAgent` central enruta las solicitudes del usuario al trabajador correcto (MealAgent, MedicalAgent, PlannerAgent, etc.)
-- **☁ Azure + OpenAI** — Arquitectura en la nube segura y escalable impulsada por GPT-4o y servicios de Azure
-- **⌚ Integración IoT** — Sincronización en tiempo real con datos de wearables para sugerencias adaptativas
-- **🏅 Motor de gamificación** — Fomenta la participación constante mediante recompensas y estímulos
-- **📡 API REST con Python FastAPI** — Endpoints como `/api/v1/chatbot` y `/api/v1/meal` ofrecen acceso modular claro
-
----
-
-## 💻 ¿Por qué Python?
-
-- **⚡ Productividad con FastAPI** — Rápido desarrollo de API gracias a su diseño moderno, validación automática de datos, serialización y documentación interactiva de API (Swagger UI / ReDoc).
-- **🧠 Orquestación Supervisor-Agent** — Los patrones de LangGraph permiten la clasificación modular de solicitudes y la delegación, encajando bien con la flexibilidad de Python.
-- **🔗 Rico Ecosistema AI/ML e Integraciones** — Python es el lenguaje de facto para IA/ML, ofreciendo extensas bibliotecas y conexiones fluidas a OpenAI, Azure Vision y servicios de almacenamiento.
-- **✅ Capacidades Asíncronas y Tipado Estático (Type Hinting)** — FastAPI está construido sobre Starlette y Pydantic, permitiendo código asíncrono de alto rendimiento y validación de datos robusta a través de las sugerencias de tipo de Python para una mejor calidad de código.
-
----
-
-## 🔍 Características Principales
-
-### 1. 🧠 Chatbot de Salud
-Haz preguntas como:
-> “Trabajo de forma remota y siento dolor de espalda.”
-
-Recibirás:
-- Sugerencias personalizadas
-- Recordatorios basados en actividad
-- Planes de estiramiento o hidratación
-
-### 2. 📸 Escáner de Comidas con Open AI
-- Toma una foto de tu plato
-- La API de Visión analiza el balance nutricional comparado con el Plato de Harvard
-- Obtén retroalimentación personalizada: “Añade más vegetales” o “Reduce los carbohidratos”
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/8493337e-9a81-43b8-ac3d-600db5138898" alt="HealthIA Demo"/>
-</p>
-
-### 3. 🥗 Generador de Dietas
-- Recetas conscientes del contexto con macros
-- Video tutoriales y planes de comidas compartibles
-- Se adapta dinámicamente a condiciones médicas y objetivos
+The following visuals come from the original HealthIA product work and pitch materials. They are kept here as a compact project gallery rather than as a replacement for the source code.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/94fe574f-51e9-4ef6-b57b-98f08a751b96" alt="HealthIA Demo"/>
+  <img src="https://github.com/user-attachments/assets/8493337e-9a81-43b8-ac3d-600db5138898" alt="HealthIA meal analysis flow" width="31%" />
+  <img src="https://github.com/user-attachments/assets/94fe574f-51e9-4ef6-b57b-98f08a751b96" alt="HealthIA personalized meal plan" width="31%" />
+  <img src="https://github.com/user-attachments/assets/712efe78-cff1-40c6-aa16-f526736e4739" alt="HealthIA activity experience" width="31%" />
 </p>
-
-### 4. 🏋️ Planificador de Entrenamientos
-- Rutinas semanales personalizadas según tus métricas
-- Ajustadas usando datos de sueño, pasos y ritmo cardíaco
-- Tutoriales animados y alertas motivacionales
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/712efe78-cff1-40c6-aa16-f526736e4739" alt="HealthIA Demo"/>
+  <img src="https://github.com/user-attachments/assets/a759a9d0-d627-4262-a1e7-2e68e98e117f" alt="HealthIA health profile" width="48%" />
+  <img src="https://github.com/user-attachments/assets/8378437f-831f-47f9-82fd-a9bb34a6db81" alt="HealthIA original cloud architecture concept" width="48%" />
 </p>
 
-### 5. 🩺 Personalización Médica
-- Adapta los planes ingresando alergias, enfermedades crónicas
-- Asegura recomendaciones seguras y efectivas
-  
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a759a9d0-d627-4262-a1e7-2e68e98e117f" alt="HealthIA Demo"/>
-</p>
+The cloud architecture image is an original design reference from the hackathon pitch. The runnable backend in this repository is the smaller FastAPI/OpenAI prototype described below; production Azure services are not assumed by the codebase.
 
----
+## Architecture
 
-## 📊 Arquitectura del Sistema
+```mermaid
+flowchart LR
+    Browser[React frontend] -->|REST / JSON / multipart| API[FastAPI backend]
+    API --> Chat[Chat orchestration]
+    API --> Vision[Meal image analysis]
+    Chat --> OpenAI[OpenAI API]
+    Vision --> OpenAI
+    API -. optional media storage .-> S3[(AWS S3)]
+    API --> Local[(Local JSON history)]
+```
 
-<img src="https://github.com/user-attachments/assets/8378437f-831f-47f9-82fd-a9bb34a6db81" alt="Azure Architecture" />
+### Implemented runtime
 
-Construido completamente en **Azure Cloud**, incluye:
-- Azure API Management
-- Azure Functions
-- Azure Blob Storage
-- Azure AI Vision
-- Azure Cosmos DB
-- Azure OpenAI
-- Azure MySQL
-- Azure Monitor
-- Azure FrontDoor + WAF
+- **Frontend:** React 19, React Router, Create React App, CSS modules/stylesheets, local product assets.
+- **Backend:** Python, FastAPI, Uvicorn, Pydantic models, OpenAI SDK, optional S3 media storage.
+- **Persistence:** local JSON files for the prototype; S3 is optional for uploaded media.
+- **Integration boundary:** `REACT_APP_API_URL` points the frontend to the FastAPI service.
 
----
+### API surface
 
-## 🤖 Framework Agéntico
+| Method | Route | Purpose |
+| --- | --- | --- |
+| `PUT` | `/chatbot` | Text, image, or audio conversation input. |
+| `GET` | `/show-chats` | List persisted conversations. |
+| `DELETE` | `/delete-chat/{chat_id}` | Remove a conversation. |
+| `PUT` | `/analyze-image` | Analyze a meal image. |
+| `GET` | `/list-analyses` | List image-analysis history. |
+| `DELETE` | `/delete-analysis` | Remove an image analysis. |
 
-<img src="https://github.com/user-attachments/assets/44950f32-f0da-4096-abc9-980f42d74857" alt="Azure MultiAgent" />
+Interactive API documentation is available at `/docs` when the backend is running locally.
 
----
+## Repository layout
 
-# 📈 Diagramas de Secuencia – HealthIA
+```text
+.
+├── frontend_HealthIA/       # React application and product UI
+├── backend_HealthIA/        # FastAPI application and AI services
+├── backend_HealthIA/app/    # Routers, models, services, and system prompt
+└── frontend_HealthIA/src/   # Screens, components, assets, and styles
+```
 
-## 1️⃣ Escáner de Comidas + Retroalimentación IA
-<img src="https://github.com/user-attachments/assets/bbb6732a-99c7-4301-a17d-fa31efb634f7" alt="HealthIA 1"/>
+The repository intentionally contains one active Python backend. The former Java implementation, EC2 SSH workflows, sample personal-data files, and standalone experiments were removed from the public surface because they were not part of the current runnable path.
 
-## 2️⃣ Interacción del Chatbot de Salud
-<img src="https://github.com/user-attachments/assets/5de7974e-f949-4f0b-982c-3affa87efb0c" alt="HealthIA 2"/>
+## Run locally
 
-## 3️⃣ Generador de Rutinas de Entrenamiento
-<img src="https://github.com/user-attachments/assets/d42d17c3-b126-4b8d-a72f-0a5659cfb5c5" alt="HealthIA 3"/>
+### 1. Start the API
 
----
+```bash
+cd backend_HealthIA
+python -m venv .venv
+# macOS/Linux: source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env  # PowerShell; use cp on macOS/Linux
+uvicorn main:app --reload --port 8000
+```
 
-## 👥 Conoce al Equipo
+Set at least `OPENAI_API_KEY` in `backend_HealthIA/.env`. AWS variables are optional and only needed when media should be uploaded to S3.
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/fransua-leon/" target="_blank">
-    <img src="https://img.shields.io/badge/Fransua%20Leon-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/sergioyupanquigomez/" target="_blank">
-    <img src="https://img.shields.io/badge/Sergio%20Yupanqui-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/luisangelorp/" target="_blank">
-    <img src="https://img.shields.io/badge/Luis%20Rodriguez-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/diegorojasvera/" target="_blank">
-    <img src="https://img.shields.io/badge/Diego%20Rojas-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-</p>
+### 2. Start the frontend
+
+```bash
+cd frontend_HealthIA
+npm ci
+copy .env.example .env.local  # PowerShell; use cp on macOS/Linux
+npm start
+```
+
+The frontend runs at [http://localhost:3000](http://localhost:3000). The local `.env.local` should point to `http://localhost:8000`.
+
+### 3. Build for production
+
+```bash
+cd frontend_HealthIA
+npm run build
+```
+
+For Vercel, import the repository with **Root Directory** set to `frontend_HealthIA`, keep the Create React App preset, and add `REACT_APP_API_URL` only when a public HTTPS backend is available.
+
+## Environment variables
+
+Frontend (`frontend_HealthIA/.env.example`):
+
+```env
+REACT_APP_API_URL=http://localhost:8000
+```
+
+Backend (`backend_HealthIA/.env.example`):
+
+```env
+OPENAI_API_KEY=replace-me
+OPENAI_MODEL=gpt-4o-mini
+PORT=8000
+RELOAD=True
+# Optional S3 settings:
+# AWS_ACCESS_KEY_ID=replace-me
+# AWS_SECRET_ACCESS_KEY=replace-me
+# AWS_REGION=us-east-1
+# S3_BUCKET=healthia
+```
+
+Never commit `.env` files, API keys, credentials, or uploaded user data.
+
+## Credits
+
+HealthIA was created as a collaborative AI-health hackathon project. The repository preserves the original team attribution and visual direction while making the active frontend/backend path easier to understand and run.
+
+## License
+
+No license file is currently included. Add a license before accepting external contributions or redistributing the code.

@@ -206,17 +206,6 @@ const HealthConditionsScreen = ({ onBack }) => {
         input.onchange = (e) => {
             const file = e.target.files[0];
             if (file) {
-                const now = new Date();
-                const formattedDate = now.toLocaleString('en-US', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                }).replace(/[/,]/g, ':');
-
                 const newDocument = {
                     id: Date.now(),
                     name: file.name,
@@ -486,4 +475,4 @@ const HealthConditionsScreen = ({ onBack }) => {
     );
 };
 
-export default HealthConditionsScreen; 
+export default HealthConditionsScreen;

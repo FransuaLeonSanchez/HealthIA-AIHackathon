@@ -14,7 +14,9 @@ import mealsInfo from './Nutrition/mealsInfo';
    ------------------------------------------------------------------ */
 
 // URL de la API desde variables de entorno
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || (
+  process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : ''
+);
 
 // 1. Función para enviar texto al chatbot
 const enviarTexto = async (mensaje, conversationId) => {
@@ -31,7 +33,6 @@ const enviarTexto = async (mensaje, conversationId) => {
       body: formData,
       headers: {
         'Accept': 'application/json',
-        'ngrok-skip-browser-warning': '69420'
       }
     });
 
@@ -65,7 +66,6 @@ const enviarImagen = async (mensaje, conversationId, imageFile) => {
       body: formData,
       headers: {
         'Accept': 'application/json',
-        'ngrok-skip-browser-warning': '69420'
       }
     });
 
@@ -99,7 +99,6 @@ const enviarAudio = async (mensaje, conversationId, audioFile) => {
       body: formData,
       headers: {
         'Accept': 'application/json',
-        'ngrok-skip-browser-warning': '69420'
       }
     });
 
@@ -195,7 +194,6 @@ const ChatScreen = ({ onBack }) => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': '69420'
           },
           mode: 'cors'
         });
@@ -239,7 +237,6 @@ const ChatScreen = ({ onBack }) => {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': '69420'
         },
         mode: 'cors'
       });
@@ -836,7 +833,6 @@ const ChatScreen = ({ onBack }) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'ngrok-skip-browser-warning': '69420'
             },
             mode: 'cors'
         });

@@ -5,7 +5,9 @@ import plateImage from "../assets/images/plate.png"; // Asegúrate de tener esta
 import CameraScreen from './CameraScreen';
 import logoDashboard from "../assets/logos/logo_sign.png";
 // URL de la API desde variables de entorno
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || (
+    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : ''
+);
 
 // Función para enviar la imagen al backend para análisis
 const analizarImagen = async (imageFile, nextId) => {
@@ -44,7 +46,6 @@ const analizarImagen = async (imageFile, nextId) => {
             body: formData,
             headers: {
                 'Accept': 'application/json',
-                'ngrok-skip-browser-warning': '69420'
             }
         });
 
@@ -71,7 +72,6 @@ const obtenerAnalisis = async () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'ngrok-skip-browser-warning': '69420'
             }
         });
 
@@ -122,7 +122,6 @@ const eliminarAnalisis = async (id) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'ngrok-skip-browser-warning': '69420'
             },
             body: JSON.stringify({ id })
         });
@@ -748,4 +747,4 @@ const AnalyzeScreen = ({ onBack }) => {
     );
 };
 
-export default AnalyzeScreen; 
+export default AnalyzeScreen;

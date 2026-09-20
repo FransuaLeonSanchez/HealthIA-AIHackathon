@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "../styles/ChatOptionsMenu.css";
 
 // URL de la API desde variables de entorno
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || (
+    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : ''
+);
 
 const ChatOptionsMenu = ({ isOpen, onClose, onNewChat, onSelectChat }) => {
     const [chats, setChats] = useState({
@@ -30,7 +32,6 @@ const ChatOptionsMenu = ({ isOpen, onClose, onNewChat, onSelectChat }) => {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'ngrok-skip-browser-warning': '69420'
                 },
                 mode: 'cors'
             });
@@ -103,7 +104,6 @@ const ChatOptionsMenu = ({ isOpen, onClose, onNewChat, onSelectChat }) => {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
-                    'ngrok-skip-browser-warning': '69420'
                 }
             });
 
@@ -200,4 +200,4 @@ const ChatOptionsMenu = ({ isOpen, onClose, onNewChat, onSelectChat }) => {
     );
 };
 
-export default ChatOptionsMenu; 
+export default ChatOptionsMenu;

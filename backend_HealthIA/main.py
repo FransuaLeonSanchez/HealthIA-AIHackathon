@@ -14,10 +14,19 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Configurar CORS
+# Configurar CORS con orígenes explícitos para desarrollo y despliegue.
+allowed_origins = [
+    origin.strip()
+    for origin in os.getenv(
+        "ALLOWED_ORIGINS",
+        "http://localhost:3000,https://healthia-ai.vercel.app",
+    ).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción, restringe esto a dominios específicos
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

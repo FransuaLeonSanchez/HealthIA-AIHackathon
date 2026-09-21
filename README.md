@@ -113,7 +113,7 @@ copy .env.example .env  # PowerShell; use cp on macOS/Linux
 uvicorn main:app --reload --port 8000
 ```
 
-Set at least `OPENAI_API_KEY` in `backend_HealthIA/.env`. AWS variables are optional and only needed when media should be uploaded to S3.
+Set at least `OPENAI_API_KEY` in `backend_HealthIA/.env`. `ALLOWED_ORIGINS` accepts a comma-separated list of trusted frontend origins; the example includes local development and the deployed HealthIA UI. AWS variables are optional and only needed when media should be uploaded to S3.
 
 ### 2. Start the frontend
 
@@ -148,6 +148,7 @@ Backend (`backend_HealthIA/.env.example`):
 ```env
 OPENAI_API_KEY=replace-me
 OPENAI_MODEL=gpt-4o-mini
+ALLOWED_ORIGINS=http://localhost:3000,https://healthia-ai.vercel.app
 PORT=8000
 RELOAD=True
 # Optional S3 settings:
